@@ -1,0 +1,63 @@
+
+/* Container for each input field and its floating label */
+.input-group {
+    position: relative; /* Allows label to move on focus */
+    margin-bottom: 30px; /* Space between input fields */
+    text-align: left; /* Align text to the left */
+}
+
+/* Style for the floating label */
+.label {
+    position: absolute; /* Position label over the input field */
+    left: 10px; /* Slight offset from the left */
+    top: 12px; /* Positioned near the middle of the input */
+    color: rgb(255, 255, 255); /* White text for label */
+    transition: all 0.2s ease; /* Smooth transition for label movement */
+    pointer-events: none; /* Prevents label from being clickable */
+}
+
+/* Adjust label position when input is focused or not empty */
+input:focus + .label,
+input:not(:placeholder-shown) + .label {
+    top: -10px; /* Move label above the input */
+    left: 10px; /* Keep left padding consistent */
+    font-size: 12px; /* Shrink label */
+    color: #000000; /* Keep the label white */
+}
+
+/* Base styling for the input fields (email and password) */
+.input {
+    font-size: 18px; /* Font size for input text */
+    border: none; /* Remove default border */
+    border-bottom: 2px solid #ccc; /* Bottom border for line effect */
+    background: transparent; /* Transparent background */
+    color: rgb(255, 255, 255); /* White text */
+    width: 100%; /* Full width of the form */
+    padding: 10px; /* Padding inside the input */
+    transition: all 0.2s ease; /* Smooth transition for border color */
+}
+
+/* Placeholder color for inputs */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* White placeholder text */
+    opacity: 1; /* Full opacity for placeholder */
+}
+
+/* Focus state for input fields */
+input:focus {
+    border-bottom: 2px solid rgb(255, 255, 255); /* White bottom border on focus */
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.8); /* Brighten the shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Specific styling for the password input */
+input[type="password"] {
+    font-size: 18px; /* Set font size for password input */
+}
+
+/* Autofill styles for browsers like Chrome */
+input:-webkit-autofill {
+    border-bottom: 2px solid #000; /* Black border for autofill */
+    background-color: transparent; /* Transparent background for autofill */
+    color: rgb(255, 255, 255) !important; /* White text color for autofill */
+}
